@@ -1,0 +1,24 @@
+{
+  "name": "AndersCan",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "_create": "use `asciinema rec` to create data.cast",
+    "create": "cat data.cast | svg-term --window --out main.svg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndersCan/AndersCan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndersCan/AndersCan/issues"
+  },
+  "homepage": "https://github.com/AndersCan/AndersCan#readme",
+  "dependencies": {
+    "chalk-animation": "^1.6.0",
+    "svg-term-cli": "^2.1.1"
+  }
+}
