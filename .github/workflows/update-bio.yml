@@ -1,0 +1,23 @@
+name: Node.js Bio
+
+on:
+  push:
+    branches: [$default-branch]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "0 2 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 15
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15
+      - run: npm ci
+      - run: npm run update-bio
+        env:
+          GH_TOKEN: ${{secrets.GH_TOKEN}}

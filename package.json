@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "_create": "use `asciinema rec` to create data.cast",
-    "create": "cat data.cast | svg-term --window --out main.svg"
+    "create": "cat data.cast | svg-term --window --out main.svg",
+    "update-bio": "node bio/index.js"
+  },
+  "prettier": {
+    "printWidth": 80
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,7 @@
   },
   "homepage": "https://github.com/AndersCan/AndersCan#readme",
   "dependencies": {
+    "@octokit/core": "^3.2.5",
     "chalk-animation": "^1.6.0",
     "svg-term-cli": "^2.1.1"
   }
