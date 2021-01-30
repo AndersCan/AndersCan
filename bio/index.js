@@ -14,10 +14,10 @@ main();
 async function main() {
   const today = new Date();
   const status = getEightBallPrediction();
-  const dataString = today.toLocaleDateString("nb-NO", {
+  const dataString = `${today.toLocaleDateString("en-UK", {
     month: "long",
     day: "numeric",
-  });
+  })}${getOrdinal(today.getDate())}`;
   const bio = `Will today, ${dataString}, be a good day? 🎱 ${status} 🎱`;
 
   console.log("TZ:", process.env.TZ);
@@ -34,4 +34,8 @@ function getEightBallPrediction() {
 
 function getRandomNumberFrom(from, to) {
   return Math.floor(Math.random() * (to - from + 1) + from);
+}
+
+function getOrdinal(days) {
+  return [, "st", "nd", "rd"][(days / 10) % 10 ^ 1 && days % 10] || "th";
 }
